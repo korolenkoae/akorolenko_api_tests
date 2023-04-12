@@ -60,7 +60,6 @@ class Api:
                 pass
             return result
 
-
     @staticmethod
     def post_new_player(nickname, club, name):
         with allure.step(f"Запроса на создание игрока{nickname, club, name}"):

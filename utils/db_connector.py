@@ -1,4 +1,4 @@
-from qa_core.db_wrapper import DbWrapper
+from db_wrapper import DbWrapper
 
 
 class DbConnector(DbWrapper):

@@ -6,7 +6,7 @@ from requests import Response
 
 
 @allure.feature("POST")
-class TestMetaApi:
+class TestPlayerPostApi:
     @allure.story("Создание нового игрока")
     def test_post_player(self):
         # Arrange
