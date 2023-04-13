@@ -29,3 +29,9 @@ class JSONFixture:
         json = {"nickname": nickname, "club": club, "name": name}
 
         return json
+
+    @staticmethod
+    def for_post_clubs(nickname, club, name):
+        json = {"nickname": nickname, "club": club, "name": name}
+
+        return json
