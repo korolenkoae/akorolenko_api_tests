@@ -71,16 +71,16 @@ class Api:
 
     @staticmethod
     def post_new_club(club_name, city):
-        with allure.step(f"Запроса на создание игрока{club_name, city}"):
+        with allure.step(f"Запроса на создание клуба{city, club_name}"):
             result = HttpManager.post(
                 Api.API_CLUBS,
-                JSONFixture.for_post_clubs(club_name, city),
+                JSONFixture.for_post_clubs(city, club_name),
             )
             Api.LOGGER.info(
-                "TEST: Post player data. Method: {0}, Data: {1}".format(
-                    "POST", JSONFixture.for_post_player(nickname, club, name)
+                "TEST: Post club data. Method: {0}, Data: {1}".format(
+                    "POST", JSONFixture.for_post_clubs(city, club_name)
                 )
             )
-            with allure.step(f"Успешное создание player с {result.json()}"):
+            with allure.step(f"Успешное создание club с {result.json()}"):
                 pass
             return result
