@@ -1,14 +1,8 @@
 import logging
 import allure
-import requests
 
 from utils.api.http_manager import HttpManager
 from utils.api.json_fixture import JSONFixture
-
-
-@allure.step('Отправка запроса с параметрами, url: "{0}"')
-def step_with_url(url):
-    pass
 
 
 class Api:
@@ -16,7 +10,6 @@ class Api:
     api_baseurl = "http://localhost:8000/"
     API_CLUBS = api_baseurl + "api/clubs"
     API_PLAYERS = api_baseurl + "api/players"
-
 
     @staticmethod
     @allure.step("Отправляем GET запрос списка игровых серверов")
