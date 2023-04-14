@@ -8,7 +8,7 @@ from utils.api.json_fixture import JSONFixture
 class Api:
     LOGGER = logging.getLogger(__name__)
     api_baseurl = "http://localhost:8000/"
-    API_CLUBS = api_baseurl + "api/clubs/"
+    API_CLUBS = api_baseurl + "api/clubs"
     API_PLAYERS = api_baseurl + "api/players"
 
     @staticmethod
@@ -82,5 +82,15 @@ class Api:
                 )
             )
             with allure.step(f"Успешное создание club с {result.json()}"):
+                pass
+            return result
+
+    @staticmethod
+    @allure.step("Отправляем GET запрос списка клубов")
+    def get_clubs():
+        with allure.step("Получение списка клубов"):
+            result = HttpManager.get(Api.API_CLUBS)
+            Api.LOGGER.info("TEST: Получение списка клубов. Method: {0}, Data: {1}")
+            with allure.step(f"Успешное получение списка клубов {result.json()}"):
                 pass
             return result
