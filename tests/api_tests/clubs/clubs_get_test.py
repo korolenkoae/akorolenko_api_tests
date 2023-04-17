@@ -3,8 +3,6 @@ from requests import Response
 import pytest
 from utils.api.api import Api
 
-#  ЭТО ВСЕ ПРОСТО ПРИМЕР ИЗ ДРУГОГО ПРОЕКТА
-
 
 @allure.feature("GET")
 class TestClubsApi:

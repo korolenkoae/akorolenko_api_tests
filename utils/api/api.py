@@ -94,3 +94,13 @@ class Api:
             with allure.step(f"Успешное получение списка клубов {result.json()}"):
                 pass
             return result
+
+    @staticmethod
+    @allure.step("Отправляем GET запрос списка игроков")
+    def get_players():
+        with allure.step("Получение списка игроков"):
+            result = HttpManager.get(Api.API_PLAYERS + "/")
+            Api.LOGGER.info("TEST: Получение списка игроков. Method: {0}, Data: {1}")
+            with allure.step(f"Успешное получение списка игроков {result.json()}"):
+                pass
+            return result
