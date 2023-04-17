@@ -104,3 +104,4 @@ class Api:
             with allure.step(f"Успешное получение списка игроков {result.json()}"):
                 pass
             return result
+

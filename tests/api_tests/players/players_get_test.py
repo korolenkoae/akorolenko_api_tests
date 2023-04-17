@@ -4,6 +4,7 @@ import pytest
 from utils.api.api import Api
 
 
+
 @allure.feature("GET")
 class TestPlayersApi:
     @allure.story("Получение списка игроков")
