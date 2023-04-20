@@ -46,3 +46,21 @@ class JSONFixture:
     def for_get_players(nickname, club, name):
         json = {"nickname": nickname, "club": club, "name": name}
         return json
+
+
+
+    @staticmethod
+    def for_put_clubs(put_id, club_name, city):
+        json = {"id": put_id, "club_name": club_name, "city": city}
+        return json
+
+
+    @staticmethod
+    def for_put_players(put_id_player, nickname, club, name):
+        json = {"id": put_id_player, "nickname": nickname, "club": club, "name": name}
+        return json
+
+    @staticmethod
+    def for_get_club_players(nickname, name):
+        json = {"nickname": nickname, "name": name}
+        return json
