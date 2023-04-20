@@ -170,6 +170,7 @@ class Api:
                 pass
             return result
 
+
     @staticmethod
     @allure.step("Отправляем GET запрос списка игроков клуба")
     def get_club_players(club_name):
