@@ -20,9 +20,9 @@ class TestClubPutApi:
         put_club_name = random_string(10)
         # Act
         result: Response = Api.put_clubs(put_id=put_id, city=put_city, club_name=put_club_name)
+        # Assert
         with allure.step("Проверяем, что код ответа 200"):
             assert 200 == result.status_code
-        # Assert
         response_json_put = result.json()
         with allure.step("Проверяем что в ответе сообщение об обновлении клуба с put_id"):
             assert response_json_put["message"] == f"Club with ID {put_id} updated successfully"

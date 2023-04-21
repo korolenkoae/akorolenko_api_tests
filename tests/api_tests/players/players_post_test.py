@@ -4,6 +4,8 @@ from tests.conftest import random_string
 from utils.api.api import Api
 from requests import Response
 
+from utils.db_connector import DbConnector
+
 
 @allure.feature("POST")
 class TestPlayerPostApi:
@@ -22,3 +24,17 @@ class TestPlayerPostApi:
             assert response_json["id"] == id_player
 
         Api.delete_players(id_player=id_player)  # удаляем созданного пользователя после теста
+
+    @allure.story("Создание нового пользователя с уже существующим никнеймом")
+    def test_post_exist_nickname(self):
+        # Arrange
+        db = DbConnector()
+        exist_nickname = db.get_first_player()
+        # Act
+        result: Response = Api.post_new_player(nickname=exist_nickname, club="Red Testing Mafia", name="Alina Korolenko")
+        response_json = result.json()
+        # Assert
+        with allure.step("Проверяем, что код ответа 400"):
+            assert 400 == result.status_code
+        with allure.step("Проверяем что в ответе сообщение об ошибке создания клуба"):
+            assert response_json["error"] == "Player with this nickname already exists"
