@@ -1,7 +1,6 @@
 import allure
-from requests import Response
-import pytest
 
+from requests import Response
 from tests.conftest import random_string
 from utils.api.api import Api
 

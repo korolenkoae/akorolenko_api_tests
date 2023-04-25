@@ -2,9 +2,8 @@ import mysql.connector
 from mysql.connector.cursor import MySQLCursorBuffered
 
 
-class DbConnector():
-
-    def __init__(self) -> object:
+class DbConnector(object):
+    def __init__(self):
         self.conn = mysql.connector.connect(
             host="127.0.0.1",
             user="test_user",
@@ -32,7 +31,3 @@ class DbConnector():
         else:
             nickname = None
         return nickname
-
-
-db = DbConnector()
-print(db.get_first_player())

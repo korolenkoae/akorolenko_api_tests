@@ -24,4 +24,3 @@ class TestClubDeleteApi:
             assert 200 == result.status_code
         with allure.step("Проверяем что в ответе сообщение об удалении клуба с id_club"):
             assert response_json_del["message"] == f"Club with ID {id_club} deleted successfully"
-

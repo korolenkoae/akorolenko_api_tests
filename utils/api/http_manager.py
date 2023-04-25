@@ -1,5 +1,4 @@
 import requests
-import ast
 
 
 class HttpManager:

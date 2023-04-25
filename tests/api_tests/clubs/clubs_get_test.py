@@ -1,6 +1,5 @@
 import allure
 from requests import Response
-import pytest
 from utils.api.api import Api
 
 
