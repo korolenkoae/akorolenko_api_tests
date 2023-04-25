@@ -31,3 +31,15 @@ class DbConnector(object):
         else:
             nickname = None
         return nickname
+
+    def get_new_id_club(self):
+        sql_max_id = "SELECT MAX(id) FROM players_club"
+        self.cursor.execute(sql_max_id)
+        max_id_row = self.cursor.fetchone()
+        if max_id_row is not None:
+            max_id = max_id_row[0]
+            new_id_club = max_id + 1
+        else:
+            new_id_club = None
+        return new_id_club
+
