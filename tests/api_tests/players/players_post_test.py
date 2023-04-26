@@ -30,7 +30,9 @@ class TestPlayerPostApi:
         db = DbConnector()
         exist_nickname = db.get_first_player()
         # Act
-        result: Response = Api.post_new_player(nickname=exist_nickname, club="Red Testing Mafia", name="Alina Korolenko")
+        result: Response = Api.post_new_player(
+            nickname=exist_nickname, club="Red Testing Mafia", name="Alina Korolenko"
+        )
         response_json = result.json()
         # Assert
         with allure.step("Проверяем, что код ответа 400"):

@@ -24,4 +24,3 @@ class TestPlayerDeleteApi:
             assert 200 == result.status_code
         with allure.step("Проверяем что в ответе сообщение об удалении пользователя с id_player"):
             assert response_json_del["message"] == f"Player with ID {id_player} deleted successfully"
-

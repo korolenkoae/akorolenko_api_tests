@@ -16,4 +16,3 @@ class TestPlayersApi:
             assert 200 == result.status_code
         with allure.step("Проверяем что в ответе параметр id=1"):
             assert response_json["players"][0]["id"] == 1
-
