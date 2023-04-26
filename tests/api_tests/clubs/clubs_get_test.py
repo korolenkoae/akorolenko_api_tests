@@ -1,4 +1,5 @@
 import allure
+
 from requests import Response
 from utils.api.api import Api
 

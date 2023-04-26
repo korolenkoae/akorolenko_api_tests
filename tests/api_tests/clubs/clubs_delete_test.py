@@ -3,7 +3,6 @@ import allure
 from tests.conftest import random_string
 from utils.api.api import Api
 from requests import Response
-
 from utils.db_connector import DbConnector
 
 
@@ -31,7 +30,7 @@ class TestClubDeleteApi:
     def test_delete_negative_club(self):
         # Arrange
         db = DbConnector()
-        new_id_club = db.get_new_id_club()
+        new_id_club = db.get_max_club_id() + 1
         # Act
         result: Response = Api.delete_clubs(id_club=new_id_club)
         response_json = result.json()

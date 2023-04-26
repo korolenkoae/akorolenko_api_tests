@@ -3,7 +3,6 @@ import allure
 from tests.conftest import random_string
 from utils.api.api import Api
 from requests import Response
-
 from utils.db_connector import DbConnector
 
 
