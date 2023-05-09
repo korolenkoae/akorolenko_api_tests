@@ -13,7 +13,7 @@ class TestPlayerPostApi:
         # Arrange
         nickname = random_string(10)
         # Act
-        result: Response = Api.post_new_player(nickname, "Red Testing Mafia", "Alina Korolenko")
+        result: Response = Api.post_new_player(nickname, club="Red Testing Mafia", name="Alina Korolenko")
         response_json = result.json()
         id_player = response_json["id"]
         # Assert
