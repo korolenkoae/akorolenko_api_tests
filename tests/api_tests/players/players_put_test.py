@@ -11,7 +11,7 @@ class TestClubPutApi:
     def test_put_players(self):
         # Arrange
         nickname = random_string(10)
-        result: Response = Api.post_new_player(nickname, "Red Testing Mafia", "Alina Korolenko")
+        result: Response = Api.post_new_player(nickname, club="Red Testing Mafia", name="Alina Korolenko")
         with allure.step("Проверяем, что код ответа 201"):
             assert 201 == result.status_code
         response_json = result.json()
